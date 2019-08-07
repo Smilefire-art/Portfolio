@@ -1,0 +1,187 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Tenor+Sans', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    --ciemnaczcionka: MidnightBlue; 
+    --jasnaczcionka: rgb(202, 202, 226);
+    --hover: rgb(127, 143, 218);
+}
+
+/* Sekcja ogólna */
+body {
+    background-image: url("./Obrazy/sky.jpg");
+    color: black;
+}
+#wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(147, 163, 209, 0.589)
+}
+h1, h2{
+    font-family: 'Satisfy', Georgia, 'Times New Roman', Times, serif; /* ZMIEŃ CZCIONKĘ!!!*/
+}
+/* cały banner */
+header{
+    margin: 0 auto;
+    position: relative;
+}
+header img{
+    width: 100%;
+    display: block;
+}
+header h1{
+    color: var(--jasnaczcionka);
+    font-size: 4rem;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 0.5s ease;
+}
+/*menu */
+.menu-trigger {
+    display: none;
+}
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+a.menu{
+    background-color: lavender;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    flex-basis: 25%; 
+    min-width: 200px;
+    padding: 15px 30px;
+    color: var(--ciemnaczcionka);
+}
+a.menu:hover{
+    background-color: var(--hover);
+}
+.active{
+    background-color: var(--hover);
+}
+/* Teraz prawdziwe ciało strony, z sekcjami o mnie i kontakt */
+article {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+article h1{
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 15% 20px;
+    padding: 15px;
+    border-bottom: 2px solid black;
+}
+img.left{
+    float: left;
+    margin: 0px 10px 10px 0;
+    padding: 10px;
+    max-width: 40%;
+    border-radius: 10%;
+}
+article p{
+    text-align: justify;
+    line-height: 1.5rem;
+    padding: 10px 0;
+}
+/* Dane kontaktowe; Mamy w nich dwa linki, więc zaznaczam to jako osobną sekcję */
+.kontakt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 20px;
+}
+.kontakt p{
+    display: block;
+    min-width: 250px;
+    text-align: left;
+}
+.kontakt h2{
+    font-size: 1.5rem;
+    justify-self: end;
+}
+.kontakt a{
+    text-decoration: none;
+    color: var(--ciemnaczcionka);
+}
+.kontakt a:hover{
+   background-color: var(--hover);
+}
+/* Niepotrzebny film + stopka */
+iframe{
+  width: 100%;
+  height: 500px;
+}
+footer {
+    background-color: var(--jasnaczcionka);
+    text-align: left;
+    padding: 20px;
+}
+
+/* A teraz czas na responsywność */
+@media screen and (max-width:800px){
+    header h1{
+        font-size: 3rem;
+        left: 5%;
+        bottom: 20%;
+    }
+    a.menu {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    header img{
+        height: 50%;
+        overflow: hidden;
+   }
+    header h1{
+        font-size: 2rem;
+        left: 5%;
+        bottom: 20%;
+    }
+   
+   
+    /* TUTAJ BYŁ CSS PODŁĄCZONY DO JAVY, ALE COŚ SIĘ ZEPSUŁO, Z PLIKU WSZYSTKO ZNIKNĘŁO I ZOSTAŁ SAM PUSTY SCRIPT.JS. Postanowiłam, że nie usunę tego fragmentu. NIe wiem, jak sprawić, żeby znów działał. */
+
+
+    /*.menu-trigger{
+        display: block; 
+        background-color: var(--jasnaczcionka);
+        color: black;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+    nav {
+            display: none;
+    }
+
+    a.menu{
+        flex-basis: 100%;
+        border-bottom: 2px solid #54687e;
+    }
+    .nav-expanded {
+        display: block;
+    } */
+
+
+    nav:last-child{
+        border-bottom: none;
+        background-color: blue;
+    } 
+    .kontakt {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+    .kontakt h2{
+        justify-self: center;
+    } 
+
+
+}
